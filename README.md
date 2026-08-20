@@ -1,25 +1,26 @@
 # Insurance-Dashboard-Excel
+Key Findings
 
-An Excel dashboard built to track sales pipeline, revenue achievement, and account executive performance for an insurance brokerage.
+Revenue Performance
 
-## What it shows
-- **Revenue Achievement** – Target vs Invoice vs Achieved Revenue, split by New / Cross Sell / Renewal categories, with achievement %
-- **Sales Pipeline** – Open opportunities by stage (Qualify, Negotiate, Propose Solution) and their value
-- **Account Executive Performance** – Deal counts and revenue by executive, broken down by deal type
-- **Meetings Tracker** – Client meeting counts by executive and year
-- **Product Mix** – Opportunity count by product group (Employee Benefits, Fire, Engineering, Marine, Liability, etc.)
+Renewal significantly outperforms target (150% achievement), while New business lags badly (only 17% placed, 4% invoiced).
+Cross Sell sits mid-pack (59% placed) but invoice conversion is weak (15%), showing a gap between "won" and "billed."
+Across all categories, invoiced amounts trail achieved revenue — pointing to a collections/billing delay, not just a sales gap.
 
-## Structure
-| Sheet | Purpose |
-|---|---|
-| `Dashboard Base` | Main dashboard — pivot tables and summary views |
-| `Calculations` | Supporting calculations feeding the dashboard |
-| `Opportunity` | Raw opportunity/pipeline data |
-| `Meeting` | Raw client meeting data |
-| `Invoice` | Raw invoice/revenue data |
+Pipeline
 
-## Tools used
-Excel (PivotTables, PivotCharts, formulas)
+44 of 49 opportunities (90%) are still open, with a steep funnel drop-off: 42 deals at Qualify → 5 at Negotiate → 2 at Propose Solution.
+Fire, Employee Benefits (EL-Group Mediclaim), and Property (DB-Mega Policy) drive the bulk of top-line opportunity value.
 
-## Note
-Built on a synthetic/sample dataset for portfolio purposes.
+Team Performance
+
+Gilbert leads invoice volume (61) but is almost entirely Renewal-driven, with minimal New business.
+Ketan Jain and Juli show the most balanced mix across Cross Sell, New, and Renewal.
+Meeting activity is concentrated in 2020 (31 of 34 meetings), suggesting either business ramp-up or a limited 2019 data window.
+Workflow
+Data Collection – Pulled raw opportunity, invoice, and meeting data from source exports (Opportunity, Invoice, Meeting sheets).
+Data Cleaning (Power Query) – Standardized column names, fixed date formats, removed duplicates/blank rows, and merged Account Executive IDs with names across tables.
+Data Modeling (Power Pivot) – Built relationships between Opportunity, Invoice, Meeting, and Account Executive tables using a star-schema style model to avoid repeated VLOOKUPs.
+DAX Measures – Created calculated measures for Achieved Revenue, Achievement %, Placed vs Invoice comparisons, and stage-wise funnel counts.
+PivotTables/PivotCharts – Summarized cleaned, modeled data into pivot tables feeding each dashboard visual.
+Dashboard Design – Assembled KPI cards, bar/funnel charts, and a donut chart into a single-page Excel dashboard for at-a-glance reporting.
