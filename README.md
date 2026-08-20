@@ -17,7 +17,9 @@ Team Performance
 Gilbert leads invoice volume (61) but is almost entirely Renewal-driven, with minimal New business.
 Ketan Jain and Juli show the most balanced mix across Cross Sell, New, and Renewal.
 Meeting activity is concentrated in 2020 (31 of 34 meetings), suggesting either business ramp-up or a limited 2019 data window.
+
 Workflow
+
 Data Collection – Pulled raw opportunity, invoice, and meeting data from source exports (Opportunity, Invoice, Meeting sheets).
 Data Cleaning (Power Query) – Standardized column names, fixed date formats, removed duplicates/blank rows, and merged Account Executive IDs with names across tables.
 Data Modeling (Power Pivot) – Built relationships between Opportunity, Invoice, Meeting, and Account Executive tables using a star-schema style model to avoid repeated VLOOKUPs.
